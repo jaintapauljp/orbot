@@ -20,3 +20,4 @@ releases
 # ant build products
 build.xml
 proguard-project.txt
+*.json
