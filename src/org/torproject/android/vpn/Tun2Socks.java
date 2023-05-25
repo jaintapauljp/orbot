@@ -64,7 +64,26 @@ public class Tun2Socks
             boolean udpgwTransparentDNS)
     {
         
-        if (!mLibLoaded)
+        
+		/* ********OpenRefactory Warning********
+		 Potential data race detected!
+		
+		The data access in 
+		!mLibLoaded
+		may have race with 1 other access.
+		
+		The mentioned access is performed in a thread spawned by 
+		mThreadVPN.start()
+		in file, OrbotVpnService.java.
+		
+		It may have contending concurrent access 
+		
+		in file, Tun2Socks.java, class Tun2Socks, method Tun2Socks, 
+		
+		mLibLoaded=false
+		
+		*/
+		if (!mLibLoaded)
         {
             System.loadLibrary("tun2socks");
             mLibLoaded = true;
